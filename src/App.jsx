@@ -29,6 +29,9 @@ const data = [
   { name: 'Deep fake (0-5%)', value: 5, color: '#2AB7CA' },
 ];
 
+const onSubmit = (data) => {
+  console.log(data);
+};
 const CustomLegend = ({ payload }) => {
   return (
     <div className="flex flex-col mb-3 gap-1">
@@ -57,8 +60,11 @@ function App() {
       {/* Header */}
       <div className='h-14 w-full bg-white  border-gray-200  items-center flex flex-row shadow-md'>
         <h2 className='text-3xl text-black px-12 font-bold mb-1 mr-30' style={{ fontFamily:"cursive", background: "linear-gradient(to right, #6699FF, #9966CC, #CC3399)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>avancer.ai</h2>
+      
         <SearchBar
           placeholder='Type to search'
+          onSubmit={onSubmit}
+          
         />
        <LuMail className='w-6 h-6 text-black ml-30 hover:scale-110 transition-all duration-200' />
        <IoNotificationsOutline className='w-6 h-6 text-black ml-10 hover:scale-110' />
